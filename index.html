@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aathira | Personal Portfolio</title>
+
+<meta name="description" content="Aathira's personal portfolio showcasing Electronics and Communication Engineering, projects, skills, certifications and achievements.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+:root {
+    --lavender: #EAE3F3;
+    --pink: #F7E6ED;
+    --purple: #927DA9;
+    --dark: #554B60;
+    --muted: #89808E;
+    --white: #FFFCFD;
+    --border: #EFE4EE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #FFFAFC;
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.8;
+}
+
+a {
+    transition: 0.3s ease;
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #826E96;
+    margin-bottom: 8px;
+}
+
+.subheading {
+    color: var(--muted);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,250,252,0.95);
+    backdrop-filter: blur(12px);
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: var(--purple);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #B17F9B;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+        125deg,
+        #F8E8EE,
+        #EAE3F3
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "✿";
+    position: absolute;
+    right: 10%;
+    top: 15%;
+    font-size: 190px;
+    color: #C7B5D6;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.small-title {
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: #9B789C;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(43px, 7vw, 72px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #9B789C;
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 570px;
+    color: #776C7D;
+}
+
+.btn {
+    display: inline-block;
+    background: #927DA9;
+    color: white;
+    text-decoration: none;
+    padding: 11px 25px;
+    border-radius: 30px;
+    margin-top: 25px;
+    width: fit-content;
+}
+
+.btn:hover {
+    background: #77628F;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+    background: #FFFCFD;
+}
+
+.about-box {
+    background: #F8EDF2;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 850px;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-section {
+    background: #F7F1F8;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.skills span {
+    padding: 9px 20px;
+    border-radius: 30px;
+    background: white;
+    border: 1px solid #E7D8E9;
+    color: #79678A;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    transform: translateY(-4px);
+    background: var(--pink);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #F1E5ED;
+    box-shadow: 0 8px 25px rgba(100,80,120,0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(100,80,120,0.13);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: #8E78A5;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.card a {
+    display: inline-block;
+    color: #927DA9;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card a:hover {
+    color: #B17F9B;
+}
+
+/* =========================
+   PROJECT SECTION
+========================= */
+
+.projects {
+    background: #F7EAF0;
+}
+
+/* =========================
+   CERTIFICATES
+========================= */
+
+.certificates {
+    background: #F8F1F7;
+}
+
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    color: #927DA9;
+    font-size: 23px;
+    margin: 38px 0 20px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education {
+    background: #FFFCFD;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: linear-gradient(
+        120deg,
+        #E5EDF5,
+        #EAE3F3
+    );
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+.contact a {
+    color: #806D9D;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: #B17F9B;
+    text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #F7EAF0;
+    color: #807587;
+    font-size: 13px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero > * {
+    animation: fadeUp 1s ease both;
+}
+
+.hero h1 {
+    animation-delay: 0.15s;
+}
+
+.hero p {
+    animation-delay: 0.3s;
+}
+
+.hero .btn {
+    animation-delay: 0.45s;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero::after {
+        font-size: 100px;
+        right: 5%;
+        top: 8%;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
+
+<header>
+
+    <div class="logo">Aathira ♡</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="small-title">
+        ECE STUDENT · CREATIVE LEARNER
+    </div>
+
+    <h1>
+        Hello, I'm <span>Aathira.</span>
+    </h1>
+
+    <p>
+        An Electronics and Communication Engineering student
+        passionate about technology, innovation, electronics
+        and continuous learning.
+
+        Exploring new ideas, building projects and growing
+        one step at a time.
+    </p>
+
+    <a href="#about" class="btn">
+        Explore My Portfolio →
+    </a>
+
+</section>
+
+
+<!-- =========================
+     ABOUT ME
+========================= -->
+
+<section class="about" id="about">
+
+    <h2 class="heading">
+        A Little About Me ♡
+    </h2>
+
+    <p class="subheading">
+        Get to know the person behind the projects.
+    </p>
+
+    <div class="about-box">
+
+        <p>
+            I am an Electronics and Communication Engineering
+            student at KPRIET.
+
+            I am interested in electronics, programming,
+            Artificial Intelligence and emerging technologies.
+
+            I enjoy learning new concepts, exploring innovative
+            ideas and applying my knowledge through practical
+            projects.
+
+            My goal is to continuously develop my technical
+            skills and become a better engineer.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section class="skills-section" id="skills">
+
+    <h2 class="heading">
+        My Skills ✿
+    </h2>
+
+    <p class="subheading">
+        Things I have learned and explored.
+    </p>
+
+    <div class="skills">
+
+        <span>Arduino</span>
+        <span>Electronics</span>
+        <span>C Programming</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>MATLAB</span>
+        <span>Artificial Intelligence</span>
+        <span>Microsoft Copilot</span>
+        <span>AWS Cloud Fundamentals</span>
+        <span>Communication</span>
+        <span>Problem Solving</span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects" id="projects">
+
+    <h2 class="heading">
+        My Projects ✧
+    </h2>
+
+    <p class="subheading">
+        A collection of my engineering ideas and creations.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>ThermoAlert</h3>
+
+            <p>
+                An Arduino-based temperature and humidity
+                monitoring system using DHT11 sensors,
+                LEDs, push buttons and a buzzer.
+
+                Designed to monitor environmental conditions
+                and provide alerts.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>More Projects Coming Soon</h3>
+
+            <p>
+                Exploring new ideas, learning new technologies
+                and working on exciting engineering projects.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATES
+========================= -->
+
+<section class="certificates" id="certificates">
+
+    <h2 class="heading">
+        Certificates & Achievements ♡
+    </h2>
+
+    <p class="subheading">
+        Every little step is a part of my learning journey.
+    </p>
+
+
+    <!-- COURSES -->
+
+    <h3 class="sub-title">
+        Courses & Certifications ✿
+    </h3>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>01. Gemini for Students</h3>
+
+            <p>
+                Completed Gemini for Students certificate.
+            </p>
+
+            <a href="certificates/gemini.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>02. MATLAB Onramp</h3>
+
+            <p>
+                Completed MATLAB Onramp course.
+            </p>
+
+            <a href="certificates/matlab.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>03. Transform Your Business with AI</h3>
+
+            <p>
+                Completed the Microsoft AI learning program.
+            </p>
+
+            <a href="certificates/business-ai.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>04. GitHub Responsible AI</h3>
+
+            <p>
+                Completed GitHub Responsible AI learning
+                program through Microsoft.
+            </p>
+
+            <a href="certificates/responsible-ai.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>05. AI Concepts for Developers</h3>
+
+            <p>
+                Completed AI Concepts for Developers
+                and Technology Professionals.
+            </p>
+
+            <a href="certificates/ai-concepts.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>06. Microsoft Copilot</h3>
+
+            <p>
+                Completed Get Started with Microsoft Copilot.
+            </p>
+
+            <a href="certificates/copilot.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>07. AWS Cloud Practitioner Essentials</h3>
+
+            <p>
+                Completed AWS Cloud Practitioner Essentials.
+            </p>
+
+            <a href="certificates/aws.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PARTICIPATIONS -->
+
+    <h3 class="sub-title">
+        Participations & Experiences ♡
+    </h3>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>08. Hands-Only CPR</h3>
+
+            <p>
+                Participated in a Hands-Only CPR awareness
+                program.
+            </p>
+
+            <a href="certificates/cpr.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>09. Project Expo 2026</h3>
+
+            <p>
+                Participated in Project Expo 2026 at KPRIET.
+            </p>
+
+            <a href="certificates/project-expo.pdf" target="_blank">
+                View Certificate →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section class="education" id="education">
+
+    <h2 class="heading">
+        My Education
+    </h2>
+
+    <p class="subheading">
+        My academic journey.
+    </p>
+
+    <div class="card">
+
+        <h3>
+            B.E. Electronics and Communication Engineering
+        </h3>
+
+        <p>
+            KPRIET
+        </p>
+
+        <p>
+            Undergraduate Student
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <h2 class="heading">
+        Let's Connect ♡
+    </h2>
+
+    <p class="subheading">
+        Always open to learning, sharing and connecting.
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        <a href="mailto:yourmail@example.com">
+            yourmail@example.com
+        </a>
+    </p>
+
+    <p>
+        <strong>LinkedIn:</strong>
+
+        <a href="YOUR_LINKEDIN_URL" target="_blank">
+            Visit My Profile
+        </a>
+    </p>
+
+    <p>
+        <strong>GitHub:</strong>
+
+        <a href="YOUR_GITHUB_URL" target="_blank">
+            Explore My GitHub
+        </a>
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Made with creativity and a little love ♡
+
+    <br>
+
+    © 2026 Aathira | Personal Portfolio
+
+</footer>
+
+</body>
+</html>
